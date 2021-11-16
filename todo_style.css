@@ -1,0 +1,153 @@
+body {
+    height: 100vh;
+    background-color: rgb(11, 30, 51);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+.navbar{
+    font-size: 40px;
+    color: rgb(179 98 28);
+    margin: 0px;
+    position: relative;
+    text-align: center;
+    background-color: rgb(56 55 55);
+}
+
+h2{
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    width: 100%;
+}
+
+h3{
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+}
+
+
+.home_page_container{
+  display: block;
+}
+.greet_banner{
+  margin-top: 200px;
+  font-size: 25px;
+  font-weight: 200;
+  color: #f5ac3b;
+  text-align: center;
+}
+.listinfo{
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 200;
+  color: ivory;
+  text-align: center;
+  }
+.list_info_input{
+  height: 25pt;
+  size: 80;
+} 
+
+label{
+     width: 150px;
+        text-align: right;
+        vertical-align: middle;
+  }
+
+
+button{
+    margin-top: 20px;
+    color: honeydew;
+    background-color: #f5ac3b;
+    height: 50px;
+    font-size: large;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+.todo_list_view
+{
+text-align: center;
+display: none;
+
+}
+
+#todo_list_banner{
+    margin-top: 15px;
+  font-size: 35px;
+  font-weight: lighter;
+  color: #f5ac3b;
+  text-align: center;
+  margin-top: 5px;
+    margin-bottom: 5px;
+  }
+#todo_listname_date{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: ivory;
+    text-align: center;
+  }
+.task_input_box{
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 700px;
+    height: 40pt;
+    left: 50%;
+    vertical-align: middle;
+  }
+
+  .todo_info{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 100;
+    color: ivory;
+    text-align: center;
+    }
+  .remove_task{
+    margin-top: 5px;
+    color: honeydew;
+    background-color: #f5ac3b;
+    height: 30px;
+    font-size: 10px;
+    font-weight: light;
+    vertical-align: middle;
+  }
+
+  #reset_todo{
+
+    color: honeydew;
+    background-color: #031a20;
+    height: 50px;
+    font-size: large;
+    font-weight: bold;
+    vertical-align: middle;
+    width: 200px;
+    text-align: center;
+  }
+
+  .display_todo_list{
+    color: ivory;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 100;
+  }
+
+  .reset_todo_list{
+    color: ivory;
+    text-align: center;
+    margin-top: 250px;
+    font-size: 30px;
+    font-weight: 100;
+  }
+  ol li{
+    list-style-type: none;
+    color:rgb(165, 165, 182);
+    vertical-align: middle;
+  }

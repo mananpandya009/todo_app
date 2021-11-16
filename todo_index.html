@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do - Get It Done!</title>
+    <link rel="icon" type="image/png" href="todo_title_icon.png">
+    <link rel="stylesheet" href="todo_style.css">
+</head>
+<body>
+    
+    <div id="todo_navbar" class="navbar">
+        <h2><span>
+            TO DO APP - DO'ERS ROCK!
+        </span></h2>
+    </div>
+    <div class="container">
+        <div id="home_page_container" class="home_page_container">
+            <div class="greet_banner">
+                <h2>Hi there! Lets make your todo lists!!</h2></div>
+        
+            <div id="mylistinfo" class="listinfo">
+                <form>
+                    <label for="username">FULL NAME&nbsp;</label>
+                    <input type="text" id="fullname" class="list_info_input" onfocus="this.value=''"><br>
+                    <label for="listname">TODO LIST NAME&nbsp;</label>
+                    <input type="text" id="listname" class="list_info_input" onfocus="this.value=''"><br>
+                    <label for="date">DATE&nbsp;</label>
+                    <input type="date" id="date" class="list_info_input" onfocus="this.value=''"><br>
+                    <button type="submit" id="submit_list_info">SUBMIT</button>
+                </form>
+            </div>
+        </div> 
+    
+    <div id="todo_list_container" class="todo_list_view">
+            
+        <div id="add_todos" class="todo_info">
+            <div id="todo_banner">
+                <p id="list_banner"> 
+
+                </p>
+                <p id="list_date_name"></p>
+            </div>
+            <div id="todo_input_div">
+                <form>
+                    <label>ADD TASK:</label><br>
+                    <input type="text" placeholder="Please Enter A Task!" id="todo_task" class="task_input_box" onfocus="this.value=''"><br>
+                    <button type="submit" id="add_task">Add Task</button></div>
+                    </form>
+            </div>
+
+        </div>
+
+        <div id="display_todos" class="display_todo_list">
+            <ol id="task_list">
+
+            </ol>
+        </div>
+        <div id="reset_app" class="reset_todo_list">
+            <button id="reset_todo" style="vertical-align: middle;">
+                Delete List
+            </button>
+
+        </div>
+        <script src="todo_app.js"></script>
+    </div> 
+    
+</body>
+</html>
