@@ -125,9 +125,9 @@ function add_task(){
     var task_li = document.createElement('li');
     task_li.setAttribute('id', task_obj.task)
     var remove_task_button = document.createElement('button');
-    //var completion_box = document.createElement('input');
-    //completion_box.type = "checkbox"
-    //completion_box.checked = completion_status;
+    var completion_box = document.createElement('input');
+    completion_box.type = "checkbox"
+    completion_box.checked = completion_status;
     remove_task_button.innerText = "X";
     remove_task_button.classList.add('remove_task');
     
