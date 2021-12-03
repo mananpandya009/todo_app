@@ -21,23 +21,28 @@ let none = "none";
 let block = "block";
 const task = "";
 
-
+//by default on first load todo_display will be null, on reload this value will be true
 if (todo_page_display){
     home_page_div.style.display = home_page_display;
     todo_list_div.style.display = todo_page_display;
     load_all_todos();
 }
 else{
+//if the user visits page for the first time and clicks submit to make a new list,this will execute
     listinfo_button_object.addEventListener('click', function (e) {
         e.preventDefault();
         load_todo_firsttime();
     
     })
-    function load_todo_firsttime()
+    
+
+//this func will be called when the user clicks 
+function load_todo_firsttime()
     {   
         localStorage.clear();
         home_page_div.style.display = none;
         todo_list_div.style.display = block;
+//current view locked to todo page
         localStorage.setItem("home_page_display",none);
         localStorage.setItem("todo_page_display",block);
 
@@ -70,10 +75,11 @@ add_task_button.addEventListener('click', function(e){
 
 task_ol.addEventListener("click", function(event) {
     
-    const parsed_todo_list = JSON.parse(localStorage.todo_object);
-    const targetTagToLowerCase = event.target.tagName.toLowerCase();
+    let parsed_todo_list = JSON.parse(localStorage.todo_object);
+    let targetTagToLowerCase = event.target.tagName.toLowerCase();
     if (targetTagToLowerCase === "li") {
       event.target.style.textDecoration = "line-through";
+      
     } else if (targetTagToLowerCase === "button") {
       event.target.parentNode.remove();  
       const selected_todo = event.target.parentNode.innerText;
@@ -83,10 +89,11 @@ task_ol.addEventListener("click", function(event) {
             parsed_todo_object = JSON.parse(t)
             console.log(parsed_todo_object.task)
             if(removable_task === parsed_todo_object.task){
-                parsed_todo_list.pop(t);
+                console.log(parsed_todo_list.indexOf(t))
+                parsed_todo_list.splice(parsed_todo_list.indexOf(t),1);
             }
         }
-        localStorage.setItem("todo_object",JSON.stringify(todo_list));
+        localStorage.setItem("todo_object",JSON.stringify(parsed_todo_list));
 
     }
     })
@@ -109,22 +116,23 @@ function add_task(){
 
     const task_obj = {
         task: `${task}`,
-        completion_status: `${completion_status}`
+        completion_status: completion_status
     }
     todo_list.push(JSON.stringify(task_obj));
     localStorage.setItem("todo_object",JSON.stringify(todo_list));
     console.log(localStorage)
     task_input_box.value = ""
     var task_li = document.createElement('li');
+    task_li.setAttribute('id', task_obj.task)
     var remove_task_button = document.createElement('button');
-    var completion_box = document.createElement('input');
-    completion_box.type = "checkbox"
-    completion_box.checked = completion_status;
+    //var completion_box = document.createElement('input');
+    //completion_box.type = "checkbox"
+    //completion_box.checked = completion_status;
     remove_task_button.innerText = "X";
     remove_task_button.classList.add('remove_task');
     
     task_li.append(task);
-    task_li.append(completion_box)
+    //task_li.append(completion_box)
     task_li.append(remove_task_button)
     task_ol.append(task_li);}
     else{
@@ -150,24 +158,19 @@ function load_all_todos()
         console.log(parsed_todo_object);
         const task = parsed_todo_object.task;
         const completion_status = parsed_todo_object.completion_status;
-        if (completion_status === true){
-            var completion_box = document.createElement('input');
-        completion_box.type = "checkbox"
-        completion_box.checked = completion_status
-        }
-        else{
-            var completion_box = document.createElement('input');
-        completion_box.type = "checkbox"
-        completion_box.checked = completion_status
-        }
+
 
         var task_li = document.createElement('li');
+        if (completion_status === true){
+            task_li.style.textDecoration = "line-through"
+        }
+
         var remove_task_button = document.createElement('button');
         remove_task_button.innerText = "X";
         remove_task_button.classList.add('remove_task');
         
         task_li.append(task);
-        task_li.append(completion_box)
+        //task_li.append(completion_box)
         task_li.append(remove_task_button)
         task_ol.append(task_li);
     }
